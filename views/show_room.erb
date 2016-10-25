@@ -1,0 +1,49 @@
+<div class="container">
+
+<header>
+  <h1> <%= room.name %> </h1>
+</header>
+
+<article>
+  <pre>
+  <%= room.description %>
+  </pre>
+</article>
+
+<section>
+  <% if room.name == "Death" || room.name == "The End" %>
+    <p><a href="/">Play Again?</a></p>
+  <% elsif room.name == "Central Corridor" %>
+    <p>
+    <form action="/game" method="POST">
+      <span style="color:white;font-family:Courier;">action</span> <input type="text" name="action"> <input type="SUBMIT" value="ENTER">
+    </form>
+    <button onclick="alert('You can tell a joke or try to dodge or even shoot them to death')">Help!</button>
+    </p>    
+  <% elsif room.name == "Laser Weapon Armory" %>
+    <p><%= session[:guesses] %> guesses remain</p>
+    <p>
+    <form action="/game" method="POST">
+      <span style="color:white;font-family:Courier;">action</span> <input type="text" name="action" maxlenght="3" placeholder="type the code"> <input type="SUBMIT" value="ENTER">
+    </form>
+    </p>
+  <% elsif room.name == "The Bridge" %>
+    <p>
+    <form action="/game" method="POST">
+      <span style="color:white;font-family:Courier;">action</span> <input type="text" name="action"> <input type="SUBMIT" value="ENTER">
+    </form>
+    <button onclick="alert('You can throw the bomb or just slowly place the bomb like gay')">Help!</button>
+    </p>
+  <% elsif room.name == "Escape Pod" %>
+    <form action="/game" method="POST">
+      <span style="color:white;font-family:Courier;">action</span> <input type="number" name="action" min="1" max="5"> <input type="SUBMIT" value="ENTER">   
+  <% else %>
+    <p>
+    <form action="/game" method="POST">
+      <span style="color:white;font-family:Courier;">action</span> <input type="text" name="action"> <input type="SUBMIT" value="ENTER">
+    </form>
+    </p>
+  <% end %>
+</section>
+
+</div>

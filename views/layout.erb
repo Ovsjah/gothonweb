@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Gothons From Planet Percal #25</title>
+<style>
+div.container {
+  width: 100%;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+header, footer {
+  padding: 1em;
+  color: red;
+  background-color: black;
+  text-align: center;
+}
+
+article {
+  padding: 20px;
+  text-align: center;
+  background-color: gray;
+}
+
+section {
+  padding: 5px;
+  text-align: center;
+  background-color: red;
+}
+
+nav {
+  padding: 5px;
+  text-align: center;
+  background-color: red;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Gothons From Planet Percal #25</h1>
+</header>
+
+<nav>
+  <a href="/login">LOG IN</a> | <a href="/register">SIGN UP</a> | <a href="/logout">LOG OUT</a></p>
+</nav>
+
+<% if flash[:success] %>
+<div class="container" style="color:green;">
+  <%= flash[:success] %>
+</div>
+<% end %>
+
+<% if flash[:error] %>
+<div class="container" style="color:red;">
+  <%= flash[:error] %>
+</div>
+<% end %>
+
+<%= yield %>
+<footer>Made by Ovsjah inpired by LRTHW</footer>
+</body>
+</html>
