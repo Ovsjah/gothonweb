@@ -30,7 +30,8 @@ Create model.rb in your lib/gothonweb/ directory and require the gems and set up
 I use bundler with Sinatra, this is the Gemfile for this example app. Before You'll need to create that Gemfile in your directory and run the following in Terminal: $ bundle install
 
 # The Third Step
-Create gothonweb.rb the main file for our app.
+Create gothonweb.rb the main file for our app. Require all necessery files.
+
 # The Fourth Step
 Starting the App using shotgun. You can install it using sudo gem install shotgun. It is very useful gem because it'll pick up changes to your ruby files so you won't need to stop and restart server every time you change a file.
 To use shotgun with our config.ru file, you need to tell shotgun which file to use, like so:
